@@ -1,0 +1,13 @@
+process.env.JWT_SECRET = process.env.JWT_SECRET || 'test-secret';
+process.env.FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || 'http://localhost:5173';
+process.env.RP_ID = process.env.RP_ID || 'localhost';
+process.env.RP_NAME = process.env.RP_NAME || 'Passless Test';
+process.env.RP_ORIGIN = process.env.RP_ORIGIN || 'http://localhost:5173';
+process.env.MAGIC_LINK_BASE_URL = process.env.MAGIC_LINK_BASE_URL || 'http://localhost:5173/verify';
+process.env.DEFAULT_RISK_THRESHOLD = process.env.DEFAULT_RISK_THRESHOLD || '65';
+process.env.MAIL_FROM = process.env.MAIL_FROM || 'passless@example.com';
+process.env.USE_MOCK_WEBAUTHN = process.env.USE_MOCK_WEBAUTHN || 'true';
+process.env.OTP_TTL_MINUTES = process.env.OTP_TTL_MINUTES || '10';
+process.env.SESSION_TTL_HOURS = process.env.SESSION_TTL_HOURS || '24';
+process.env.ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'admin@example.com';
+process.env.ADMIN_DISPLAY_NAME = process.env.ADMIN_DISPLAY_NAME || 'Admin';
