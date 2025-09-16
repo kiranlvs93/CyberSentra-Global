@@ -1,0 +1,42 @@
+version: '3.9'
+services:
+  mongo:
+    image: mongo:6
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: passless
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.runCommand('ping').ok"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  server:
+    build: ./server
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      MONGO_URI: mongodb://mongo:27017/passless
+      FRONTEND_ORIGIN: http://localhost:5173
+      RP_ORIGIN: http://localhost:5173
+      MAGIC_LINK_BASE_URL: http://localhost:5173/verify
+    ports:
+      - "4000:4000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    command: ["./scripts/wait-for.sh", "mongo:27017", "--", "node", "dist/index.js"]
+
+  web:
+    build: ./web
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      VITE_API_BASE_URL: http://localhost:4000
+    ports:
+      - "5173:5173"
+    depends_on:
+      server:
+        condition: service_started
