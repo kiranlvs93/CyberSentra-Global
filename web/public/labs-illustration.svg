@@ -1,0 +1,18 @@
+<svg width="360" height="320" viewBox="0 0 360 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="labs" x1="40" y1="40" x2="320" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#002B5B" />
+      <stop offset="1" stop-color="#00A8E8" />
+    </linearGradient>
+  </defs>
+  <rect x="28" y="32" width="304" height="256" rx="44" fill="rgba(0, 188, 212, 0.14)" />
+  <rect x="88" y="92" width="184" height="136" rx="24" fill="url(#labs)" opacity="0.88" />
+  <rect x="124" y="128" width="112" height="12" rx="6" fill="white" opacity="0.85" />
+  <rect x="124" y="152" width="88" height="12" rx="6" fill="white" opacity="0.7" />
+  <rect x="124" y="176" width="96" height="12" rx="6" fill="#00BCD4" opacity="0.9" />
+  <circle cx="104" cy="128" r="8" fill="#00BCD4" />
+  <circle cx="104" cy="152" r="8" fill="#00A8E8" />
+  <circle cx="104" cy="176" r="8" fill="#004E92" />
+  <path d="M72 236H288" stroke="#004E92" stroke-width="10" stroke-linecap="round" opacity="0.3" />
+  <path d="M142 238L162 210L186 238L206 208L228 238" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.8" />
+</svg>
